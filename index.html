@@ -13,8 +13,13 @@
         <p class="eyebrow">Memory Matching Game</p>
         <h1>MemoryFlip</h1>
         <p class="lead">
-          Flip cards, remember their positions, and match every pair in as few moves as possible.
+          Flip cards, remember their positions, and clear the board in as few moves as possible.
         </p>
+        <div class="hero-badges" aria-label="Game highlights">
+          <span class="badge">3 difficulty levels</span>
+          <span class="badge">Hint support</span>
+          <span class="badge">Optional timer</span>
+        </div>
       </div>
 
       <div class="stats-panel">
@@ -30,6 +35,10 @@
           <span class="stat-label">Best Score</span>
           <strong id="bestScore">-</strong>
         </div>
+        <div class="stat-card">
+          <span class="stat-label">Difficulty</span>
+          <strong id="difficultyLabel">Easy</strong>
+        </div>
       </div>
     </section>
 
@@ -37,15 +46,24 @@
       <div class="instructions card">
         <h2>How to Play</h2>
         <ol>
-          <li>Press <strong>New Game</strong> to shuffle the board.</li>
+          <li>Choose a difficulty, then press <strong>New Game</strong>.</li>
           <li>Click any two cards to reveal their symbols.</li>
-          <li>If the symbols match, the cards stay visible.</li>
-          <li>If they do not match, they flip back after a short delay.</li>
-          <li>Match all 8 pairs to win the game.</li>
+          <li>Matching cards stay visible on the board.</li>
+          <li>Non-matching cards flip back after a short delay.</li>
+          <li>Match every pair to finish the round.</li>
         </ol>
       </div>
 
       <div class="settings card">
+        <div class="select-row">
+          <label for="difficultySelect">Difficulty</label>
+          <select id="difficultySelect">
+            <option value="easy">Easy - 8 pairs</option>
+            <option value="medium">Medium - 10 pairs</option>
+            <option value="hard">Hard - 12 pairs</option>
+          </select>
+        </div>
+
         <div class="button-row">
           <button id="newGameBtn" class="primary">New Game</button>
           <button id="showHintBtn" class="secondary">Show Hint</button>
@@ -55,6 +73,11 @@
           <input type="checkbox" id="timerToggle">
           <span>Enable timer challenge</span>
         </label>
+
+        <div class="status-strip" aria-label="Game summary">
+          <span id="pairsGoal">Goal: 8 pairs</span>
+          <span id="hintsLeft">Hints: 1 left</span>
+        </div>
 
         <p class="timer-text">Time: <span id="timer">00:00</span></p>
         <p id="message" class="message">Start a new game to begin matching pairs.</p>
