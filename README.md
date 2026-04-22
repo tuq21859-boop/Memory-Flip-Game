@@ -1,7 +1,5 @@
 # Memory-Flip-Game
 
-# MemoryFlip
-
 ## Description
 MemoryFlip is a browser-based memory matching game where players flip over cards to find matching pairs. Each card hides a symbol, and the player must remember the positions of previously revealed cards to clear the board successfully.
 
